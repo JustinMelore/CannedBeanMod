@@ -1,6 +1,8 @@
 package beanmod;
 
 import com.mojang.logging.LogUtils;
+
+import beanmod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -43,12 +45,16 @@ public class CannedBeanMod
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
+        //Registering all of the mod's items
+        ModItems.register(modEventBus);
+        
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -61,10 +67,13 @@ public class CannedBeanMod
 
     }
 
-    // Add the example block item to the building blocks tab
+    //Adds all of the mod's items to the creative menu
+    //TODO Add the throwable beans to the creative menu
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-
+    	if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+    		event.accept(ModItems.OPENED_BEANS);
+    	}
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
