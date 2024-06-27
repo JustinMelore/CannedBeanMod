@@ -11,7 +11,6 @@ import net.minecraftforge.registries.RegistryObject;
 /**
  * Registers all of the mod's items and stores all of those items' registry objects
  */
-//TODO Register the throwable beans
 public class ModItems {
 	
 	public static final DeferredRegister<Item> ITEMS = 
@@ -22,6 +21,9 @@ public class ModItems {
 	
 	public static final RegistryObject<Item> OPENED_BEANS = ITEMS.register("opened_beans",
 			() -> new Item(new Item.Properties().food(OPENED_BEANS_PROPS)));
+	
+	public static final RegistryObject<Item> BEANS = ITEMS.register("beans", 
+			() -> new Item(new Item.Properties().stacksTo(16)));
 	
 	public static void register(IEventBus eventBus) {
 		ITEMS.register(eventBus);

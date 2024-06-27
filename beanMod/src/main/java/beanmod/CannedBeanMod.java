@@ -74,6 +74,9 @@ public class CannedBeanMod
     	if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
     		event.accept(ModItems.OPENED_BEANS);
     	}
+    	else if(event.getTabKey() == CreativeModeTabs.COMBAT) {
+    		event.accept(ModItems.BEANS);
+    	}
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

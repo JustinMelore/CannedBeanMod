@@ -15,11 +15,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 		super(output, CannedBeanMod.MODID, existingFileHelper);
 	}
 
-	//TODO Create model builder for throwable beans
 	@Override
 	protected void registerModels() {
 		simpleItem(ModItems.OPENED_BEANS);
-		
+		simpleItem(ModItems.BEANS);
 	}
 	
 	
