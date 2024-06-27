@@ -1,6 +1,7 @@
 package beanmod.item;
 
 import beanmod.CannedBeanMod;
+import beanmod.item.custom.BeanCanItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,7 +24,7 @@ public class ModItems {
 			() -> new Item(new Item.Properties().food(OPENED_BEANS_PROPS)));
 	
 	public static final RegistryObject<Item> BEANS = ITEMS.register("beans", 
-			() -> new Item(new Item.Properties().stacksTo(16)));
+			() -> new BeanCanItem(new Item.Properties().stacksTo(16)));
 	
 	public static void register(IEventBus eventBus) {
 		ITEMS.register(eventBus);

@@ -1,5 +1,6 @@
 package beanmod.item.custom;
 
+import beanmod.entity.custom.BeanCanProjectileEntity;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -29,12 +30,11 @@ public class BeanCanItem extends Item {
             0.5F,
             0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F)
         );
-        //TODO Replace with relevant code
         if (!pLevel.isClientSide) {
-//            HappyfaceProjectileEntity happyfaceProjectile = new HappyfaceProjectileEntity(pLevel, pPlayer);
-//            happyfaceProjectile.setItem(itemstack);
-//            happyfaceProjectile.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 1.5F, 1.0F);
-//            pLevel.addFreshEntity(happyfaceProjectile);
+            BeanCanProjectileEntity beanCanProjectile = new BeanCanProjectileEntity(pLevel, pPlayer);
+            beanCanProjectile.setItem(itemstack);
+            beanCanProjectile.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 1.5F, 1.0F);
+            pLevel.addFreshEntity(beanCanProjectile);
         }
 
         pPlayer.awardStat(Stats.ITEM_USED.get(this));

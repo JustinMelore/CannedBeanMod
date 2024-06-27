@@ -2,8 +2,11 @@ package beanmod;
 
 import com.mojang.logging.LogUtils;
 
+import beanmod.entity.ModEntities;
 import beanmod.item.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -55,6 +58,9 @@ public class CannedBeanMod
         //Registering all of the mod's items
         ModItems.register(modEventBus);
         
+        //Registers the bean can projectile
+        ModEntities.register(modEventBus);
+        
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -93,7 +99,7 @@ public class CannedBeanMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+        	EntityRenderers.register(ModEntities.BEANS_PROJECTILE.get(), ThrownItemRenderer::new);
         }
     }
 }
