@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 
 import beanmod.entity.ModEntities;
 import beanmod.item.ModItems;
+import beanmod.loot.ModLootModifiers;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -60,6 +61,9 @@ public class CannedBeanMod
         
         //Registers the bean can projectile
         ModEntities.register(modEventBus);
+        
+        //Registers the global loot modifiers
+        ModLootModifiers.register(modEventBus);
         
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
