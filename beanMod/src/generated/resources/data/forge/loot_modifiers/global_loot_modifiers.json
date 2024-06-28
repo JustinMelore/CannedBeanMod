@@ -1,0 +1,24 @@
+{
+  "entries": [
+    "beanmod:beans_from_stronghold_corridor",
+    "beanmod:beans_from_mineshaft",
+    "beanmod:beans_from_village_plains",
+    "beanmod:beans_from_dungeon",
+    "beanmod:beans_from_shipwreck_supply1",
+    "beanmod:beans_from_village_fisher",
+    "beanmod:beans_from_shipwreck_supply2",
+    "beanmod:beans_from_stronghold_crossing",
+    "beanmod:beans_from_igloo",
+    "beanmod:beans_from_village_butcher1",
+    "beanmod:beans_from_village_butcher2",
+    "beanmod:beans_from_village_butcher3",
+    "beanmod:beans_from_village_weaponsmith",
+    "beanmod:beans_from_pillager_outpost",
+    "beanmod:beans_from_village_taiga",
+    "beanmod:beans_from_village_savanna",
+    "beanmod:beans_from_village_desert",
+    "beanmod:beans_from_woodland_mansion",
+    "beanmod:beans_from_village_snowy"
+  ],
+  "replace": false
+}
